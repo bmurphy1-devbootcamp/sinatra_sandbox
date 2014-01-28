@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Welcome to Sinatra!</h1>
+  <p>Hello, world!</p>
+
+  <table>
+    <tr>
+      <th>File Description</th>
+      <th>File Location</th>
+    </tr>
+    <tr>
+      <td>This view file</td>
+      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
+    </tr>
+    <tr>
+      <td>The layout file</td>
+      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
+    </tr>
+    <tr>
+      <td>The current controller</td>
+      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
+    </tr>
+  </table>
+  <form action="/cool_url" method="get">
+    <input type="text" name="get_text"><br>
+    <input type="textarea" name="get_textarea"><br>
+    <input type="radio" name ="get_radio" value="1">1</br>
+    <input type="radio" name ="get_radio" value="2">2</br>
+    <input type="radio" name ="get_radio" value="3">3</br>
+    </br>
+    </br>
+    <input type="text" name="post[title]"></br>
+    <input type="text" name="post[price]"></br>
+    <textarea name="post[description]"></textarea></br>
+    <input type="submit" value="submit get now">
+  </form>
+
+  <form action="/cool_url" method="post">
+    <input type="text" name="post_text">
+    <input type="textarea" name="post_textarea"><br>
+    <input type="radio" name ="post_radio" value="1">1</br>
+    <input type="radio" name ="post_radio" value="2">2</br>
+    <input type="radio" name ="post_radio" value="3">3</br>
+    <input type="checkbox" name="vehicle[bike]" value="Bike"/>I have a bike<br>
+    <input type="checkbox" name="vehicle[car]" value="Car"/>I have a car
+    <input type="submit" value="submit post now">
+  </form>
+</div>
